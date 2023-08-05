@@ -1,0 +1,36 @@
+/* Header Container */
+.navbar {
+    background-color: #001B48;
+  }
+  
+  /* Menu Items */
+  .navbar-nav .nav-item {
+    margin-right: 15px;
+  }
+  
+  /* Menu Title */
+  .menu-title {
+    font-size: 14px;
+    color: #fff;
+    
+  }
+  
+  /* Menu Icon */
+  .menu-icon {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+  
+  /* Full Screen Link */
+  .full-screen-link {
+    margin-left: auto;
+  }
+  
+  /* Full Screen Icon */
+  #fullscreen-button {
+    color: #fff;
+    font-size: 20px;
+  }
+  

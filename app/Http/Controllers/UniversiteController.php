@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Universite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,7 +11,7 @@ class UniversiteController extends Controller
 {
     public function index(){
 
-        $universiteler = DB::table('universiteler')->get();
+        $universiteler = Universite::all();
         return view('universite.universite',compact('universiteler'));
     }
 

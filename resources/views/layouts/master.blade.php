@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/header.css">
   <!-- End layout styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -17,21 +18,22 @@
 </head>
 <body>
     <div class="container-scroller">
-
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <!-- Header içeriği burada yer alacak -->
     @include('partials.header')
+
+    </nav>
 
     <div class="container-fluid page-body-wrapper">
 
-      @include('partials.sidebar')
+      {{-- @include('partials.sidebar') --}}
 
-      <div class="main-panel">
             <div class="content-wrapper">
                 
                  @yield('content')
 
             </div>
 
-        </div>
     </div>
     @include('partials.footer')
 
