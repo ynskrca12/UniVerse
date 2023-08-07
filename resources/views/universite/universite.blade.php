@@ -96,7 +96,7 @@ h3 {
 .card {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   width: 300px; 
@@ -105,7 +105,7 @@ h3 {
 
 .card:hover {
   transform: translateY(-15px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
 }
 
 .card-img-top {

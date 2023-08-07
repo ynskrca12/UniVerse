@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
+            $table->integer('fiyat');
             $table->string('kategori')->nullable();
             $table->longText('image')->nullable();
             $table->integer('user_id');

@@ -19,27 +19,17 @@
 <body>
     <div class="container-scroller">
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <!-- Header içeriği burada yer alacak -->
-    @include('partials.header')
-
-    </nav>
+        @include('partials.header')
+      </nav>
 
     <div class="container-fluid page-body-wrapper">
-
       {{-- @include('partials.sidebar') --}}
-
-            <div class="content-wrapper">
-                
+            <div class="content-wrapper">                
                  @yield('content')
-
             </div>
-
     </div>
     @include('partials.footer')
-
 </div>
-
-
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>

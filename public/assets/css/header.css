@@ -7,15 +7,26 @@
   .navbar-nav .nav-item {
     margin-right: 15px;
   }
+
+
   
   /* Menu Title */
   .menu-title {
-    font-size: 14px;
+    font-size: 16px;
     color: #fff;
+    padding: 4px 16px;
+
     
   }
+
+  .menu-title:hover {
+    font-size: 16px;
+    color: #001b48;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 4px 16;
+  }
   
-  /* Menu Icon */
   .menu-icon {
     color: #fff;
     font-size: 20px;
@@ -23,14 +34,52 @@
     margin-left: 8px;
   }
   
-  /* Full Screen Link */
   .full-screen-link {
     margin-left: auto;
   }
   
-  /* Full Screen Icon */
   #fullscreen-button {
     color: #fff;
     font-size: 20px;
   }
   
+  :root {
+    --primary-color: ##001b48; 
+    --secondary-color: #ffffff; 
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 300;
+  /* border: 2px solid var(--secondary-color); */
+  border-radius: 8px;
+  padding: 4px 22px;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.link:hover {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.link-brand {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logo-text {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.8em;
+  letter-spacing: 1px;
+}
