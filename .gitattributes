@@ -2,7 +2,7 @@
 *.php linguist-language=PHP
 
 *.blade.php diff=html
-*.css diff=css
+*.css diff=php
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
