@@ -34,6 +34,16 @@
           <span class="menu-title">İlanlar</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">
+          <span class="menu-title">Giriş Yap</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">
+          <span class="menu-title">Kayıt Ol</span>
+        </a>
+      </li>
 
 
       <li class="nav-item d-none d-lg-block full-screen-link">
