@@ -5,8 +5,6 @@ use App\Http\Controllers\UniversiteController;
 use App\Http\Controllers\DuyuruController;
 use App\Http\Controllers\IlanController;
 
-
-
 Route::get('/', function () {
     return view('layouts.master');
 });

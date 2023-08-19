@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('universite')->nullable();
             $table->string('durum')->nullable();
-            $table->string('user_type')->nullable();
+            $table->string('user_type')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
