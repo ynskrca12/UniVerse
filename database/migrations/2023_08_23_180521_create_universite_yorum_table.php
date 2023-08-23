@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('universiteler', function (Blueprint $table) {
+        Schema::create('universite_yorum', function (Blueprint $table) {
             $table->id();
-            $table->string('universite_ad');
-            $table->string('kurulus');
-            $table->string('universite_il');
-            $table->string('turu');
-            $table->string('internet_sitesi');
-            $table->longText('image')->nullable();
+            $table->integer('user_id');
+            $table->integer('universite_id');
+            $table->text('yorum');
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('universiteler');
+        Schema::dropIfExists('universite_yorum');
     }
 };

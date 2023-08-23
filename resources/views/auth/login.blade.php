@@ -9,7 +9,7 @@
       </div>
 
       <div class="input-divs">
-        <input type="password" name="password" placeholder="Sifre" id="password"/>
+        <input type="password" name="password" placeholder="Şifre" id="password"/>
       </div>
 
       <a class="lost-password">Şifremi unuttum</a>
@@ -17,7 +17,7 @@
       <button type="submit" class="login-btn">GİRİŞ YAP</button>
       <div class="is-member-div">
         <label class="is-member">Üye değil misiniz?
-          <a href="#" class="to-join">Katılmak için tıklayınız</a>
+          <a href="/register" class="to-join">Katılmak için tıklayınız</a>
         </label>
       </div>
     </div>

@@ -13,19 +13,24 @@
       </div>
       <div class="col-md-6">
         <h2 class="registerh2">Kayıt Ol</h2>
+        <div class="mt-3">
         <form>
           <div class="mb-4">
             <label for="fullName" class="form-label">Ad Soyad</label>
             <input type="text" class="form-control" id="fullName" name="fullName" required>
           </div>
           <div class="mb-4">
-            <label for="university" class="form-label">Üniversite</label>
-            <input type="text" class="form-control" id="university" name="university" required>
+            <label for="email" class="form-label">Kullanıcı Adı</label>
+            <input type="email" class="form-control" id="email" name="email" required>
           </div>
           <div class="mb-4">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" required>
           </div>
+          <div class="mb-4">
+            <label for="university" class="form-label">Üniversite</label>
+            <input type="text" class="form-control" id="university" name="university" required>
+          </div>        
           <div class="mb-4">
             <label for="status" class="form-label">Durum</label>
             <select class="form-select" id="status" name="status" required>
@@ -40,6 +45,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Kayıt Ol</button>
         </form>
+      </div>
       </div>
     </div>
   </div>
@@ -94,7 +100,7 @@
 }
 
 .registerh2{
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     font-size:26px;
     text-align: center;
 }

@@ -24,11 +24,11 @@
           <span class="menu-title">Etkinlikler</span>
         </a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="/duyurular">
           <span class="menu-title">Duyurular</span>
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" href="/ilanlar">
           <span class="menu-title">İlanlar</span>
