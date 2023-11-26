@@ -34,6 +34,15 @@
           <span class="menu-title">İlanlar</span>
         </a>
       </li>
+      @auth
+      {{-- Kullanıcı giriş yapmışsa --}}
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">
+          <span class="menu-title">Çıkış Yap</span>
+        </a>
+      </li>
+    @else
+      {{-- Kullanıcı giriş yapmamışsa --}}
       <li class="nav-item">
         <a class="nav-link" href="/login">
           <span class="menu-title">Giriş Yap</span>
@@ -44,6 +53,8 @@
           <span class="menu-title">Kayıt Ol</span>
         </a>
       </li>
+    @endauth
+
 
 
       <li class="nav-item d-none d-lg-block full-screen-link">
@@ -51,16 +62,16 @@
           <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
         </a>
       </li>
-   
-     
 
 
 
-      
+
+
+
     </ul>
 
 
-    
+
   </div>
 </nav>
 

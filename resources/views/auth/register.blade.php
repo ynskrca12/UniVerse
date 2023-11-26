@@ -3,25 +3,31 @@
 @section('content')
 
 <div class="container">
+    @if (Session::has('success'))
+    <div class="alert alert-success" role="alert">
+        {{ Session::get('success') }}
+    </div>
+    @endif
     <div class="row">
       <div class="col-md-6">
         <h2>Neden Kayıt Olmalısın?</h2>
-        <p>Yeni fırsatları yakalamak ve bağlantılar kurmak için adımını at! İlanlarını paylaş, yaratıcılığını sergile; 
-            üniversite duyurularını takip et, etkinlikleri kaçırma; 
+        <p>Yeni fırsatları yakalamak ve bağlantılar kurmak için adımını at! İlanlarını paylaş, yaratıcılığını sergile;
+            üniversite duyurularını takip et, etkinlikleri kaçırma;
             geleceğin iş veya staj fırsatlarını keşfetmek için aramıza katıl . Birlikte daha fazlasını başarabiliriz!
         </p>
       </div>
       <div class="col-md-6">
         <h2 class="registerh2">Kayıt Ol</h2>
         <div class="mt-3">
-        <form>
+        <form  action="{{ route('registerPost') }}" method="POST" >
+            @csrf
           <div class="mb-4">
             <label for="fullName" class="form-label">Ad Soyad</label>
-            <input type="text" class="form-control" id="fullName" name="fullName" required>
+            <input type="text" class="form-control" id="ad_soyad" name="ad_soyad" required>
           </div>
           <div class="mb-4">
             <label for="email" class="form-label">Kullanıcı Adı</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="text" class="form-control" id="kullanici_adi" name="kullanici_adi" required>
           </div>
           <div class="mb-4">
             <label for="email" class="form-label">Email</label>
@@ -30,19 +36,16 @@
           <div class="mb-4">
             <label for="university" class="form-label">Üniversite</label>
             <input type="text" class="form-control" id="university" name="university" required>
-          </div>        
-          <div class="mb-4">
-            <label for="status" class="form-label">Durum</label>
-            <select class="form-select" id="status" name="status" required>
-              <option value="" disabled selected>Durum Belirt</option>
-              <option value="student">Öğrenci</option>
-              <option value="faculty">Mezun</option>
-            </select>
           </div>
           <div class="mb-4">
             <label for="password" class="form-label">Şifre</label>
             <input type="password" class="form-control" id="password" name="password" required>
           </div>
+          <div class="mb-4">
+            <label for="password_confirmation" class="form-label">Şifre Tekrar</label>
+            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
+                required>
+        </div>
           <button type="submit" class="btn btn-primary">Kayıt Ol</button>
         </form>
       </div>
@@ -56,7 +59,7 @@
 .container {
   padding: 20px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-  margin-top:-1rem; 
+  margin-top:-1rem;
 }
 
 .col-md-6 {
@@ -122,6 +125,6 @@
 
 @section('js')
  <script>
-    
-</script>  
+
+</script>
 @endsection

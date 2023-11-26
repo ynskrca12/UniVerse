@@ -1,11 +1,17 @@
 @extends('layouts.master')
 
 @section('content')
-<form class="root-login-form" >
+<form class="root-login-form" action="{{route('login')}}" method="POST">
+    @csrf
     <div class="login-inner-div">
       <h1>Giriş Ekranı</h1>
+      @if (Session::has('error'))
+          <div class="alert alert-warning" role="alert">
+            {{ Session::get('error') }}
+          </div>
+      @endif
       <div class="input-divs">
-        <input type="text"  placeholder="E-mail" name="email" id="email"/>        
+        <input type="text"  placeholder="E-mail" name="email" id="email"/>
       </div>
 
       <div class="input-divs">
@@ -122,11 +128,11 @@
 } */
 
 
-</style>    
+</style>
 @endsection
 
 @section('js')
  <script>
-    
-</script>  
+
+</script>
 @endsection
