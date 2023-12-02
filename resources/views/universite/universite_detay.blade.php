@@ -40,62 +40,51 @@
                     <p>Kuruluş Tarihi: {{$universite->kurulus}}</p>
                 </div>
             </div>
-            
-       
-            
-            
+
+
+
+
         </div>
         <div class="col-md-6">
                          <h2>Kullanıcı Yorumları</h2>
+                @auth
                     <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Yorum yap...">
+                        <form method="post" action="{{ route('universite_yorum_ekle',$universite->id) }}">
+                            @csrf
+                            <div class="input-group mb-3">
+                                <input type="text" name="comment" class="form-control" placeholder="Yorum yap...">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn  btn-info">Gönder</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kullanıcı Adı</h5>
-                                    <p class="card-text">Yorum metni burada yer alacak.</p>
-                                </div>
+                @endauth
+                   @foreach ($universite_yorumlar as $comment)
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"> <i class="fas fa-user" style="margin-left: 10px;"></i>
+                                  @php
+                                      $user = DB::table('users')->where('id',$comment->user_id)->value('name');
+                                      echo $user;
+                                  @endphp
+                                </h5>
+                                <p class="card-text">{{ $comment->yorum }}</p>
                             </div>
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kullanıcı Adı</h5>
-                                    <p class="card-text">Yorum metni burada yer alacak.</p>
-                                </div>
-                            </div> 
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kullanıcı Adı</h5>
-                                    <p class="card-text">Yorum metni burada yer alacak.</p>
-                                </div>
-                            </div>  
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kullanıcı Adı</h5>
-                                    <p class="card-text">Yorum metni burada yer alacak.</p>
-                                </div>
-                            </div>
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kullanıcı Adı</h5>
-                                    <p class="card-text">Yorum metni burada yer alacak.</p>
-                                </div>
-                            </div> 
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kullanıcı Adı</h5>
-                                    <p class="card-text">Yorum metni burada yer alacak.</p>
-                                </div>
-                            </div> 
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kullanıcı Adı</h5>
-                                    <p class="card-text">Yorum metni burada yer alacak.</p>
-                                </div>
-                            </div>
+                        @if (Auth::user()->id === $comment->user_id)
+                            <form action="{{ route('universite_yorum_sil', [$universite->id, $comment->id]) }}"
+                                method="POST">  @csrf  @method('DELETE')
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        @endif
+                        </div>
+                   @endforeach
+
+
         </div>
     </div>
 </div>
-   
+
 @endsection
 
 @section('css')
@@ -115,7 +104,7 @@ body {
 }
 
 .card-body {
-    padding: 20px;
+    padding: 0px;
 }
 
 .card.comment-card {
@@ -163,11 +152,11 @@ h2 {
 }
 
 .instagram-color {
-    color: #C13584; 
+    color: #C13584;
 }
 .instagram-color:hover {
-    color: #ffffff; 
-    background-color: #C13584; 
+    color: #ffffff;
+    background-color: #C13584;
 }
 
 .twitter-color {
@@ -175,33 +164,38 @@ h2 {
 }
 .twitter-color:hover {
     color: #ffffff;
-    background-color: #1DA1F2; 
+    background-color: #1DA1F2;
 }
 
 .youtube-color {
-    color: #FF0000; 
+    color: #FF0000;
 }
 .youtube-color:hover {
-    color: #ffffff; 
-    background-color: #FF0000; 
+    color: #ffffff;
+    background-color: #FF0000;
 }
 .mail-color {
-    color: #FFA500; 
+    color: #FFA500;
 }
 .mail-color:hover {
-    color: #ffffff; 
-    background-color: #FFA500; 
+    color: #ffffff;
+    background-color: #FFA500;
 }
 
 .telefon-color {
-    color: #0000ff ;    
+    color: #0000ff ;
 }
 
 .telefon-color:hover{
-    color: #ffffff; 
-    background-color: #0000ff; 
+    color: #ffffff;
+    background-color: #0000ff;
 }
-</style>   
+.btn-danger{
+    float: right;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+</style>
 @endsection
 
 

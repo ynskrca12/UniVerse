@@ -22,7 +22,7 @@
       </nav>
     <div class="container-fluid page-body-wrapper">
       {{-- @include('partials.sidebar') --}}
-            <div class="content-wrapper">                
+            <div class="content-wrapper">
                  @yield('content')
             </div>
     </div>

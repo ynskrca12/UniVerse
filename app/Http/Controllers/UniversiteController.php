@@ -15,8 +15,11 @@ class UniversiteController extends Controller
         return view('universite.universite',compact('universiteler'));
     }
 
-    public function universite_detay($id){       
+    public function universite_detay($id){
          $universite = DB::table('universiteler')->where('id',$id)->first();
-        return view('universite.universite_detay',compact('universite')); 
+
+         $universite_yorumlar = DB::table('universite_yorum')->orderBy('created_at','desc')->get();
+
+        return view('universite.universite_detay',compact('universite','universite_yorumlar'));
     }
 }
