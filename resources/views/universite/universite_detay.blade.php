@@ -1,10 +1,11 @@
 @extends('layouts.master')
 @section('content')
+<h2 class="text-center mb-5">{{$universite->universite_ad}}</h2>
 
-<div class="container mt-5">
+<div class="container mt-3">
+
     <div class="row">
         <div class="col-md-6">
-            <h2 class="text-center mb-5">{{$universite->universite_ad}}</h2>
             <h5 class="text-center">Sosyal Medya</h5>
             <div class="header2-media-icons-div">
                 <div class="header2-media-icon-div ">
@@ -22,16 +23,16 @@
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
-                <div class="header2-media-icon-div">
+                {{-- <div class="header2-media-icon-div">
                     <a href="https://rehber.ibu.edu.tr/" target="_blank" class="header2-ikon-a telefon-color" title="Telefon Rehberi">
                         <i class="fas fa-phone"></i>
                     </a>
-                </div>
-                <div class="header2-media-icon-div">
+                </div> --}}
+                {{-- <div class="header2-media-icon-div">
                     <a href="https://mail.ibu.edu.tr" target="_blank" class="header2-ikon-a mail-color " title="İBU Eposta">
                         <i class="fas fa-envelope"></i>
                     </a>
-                </div>
+                </div> --}}
             </div>
             <div class="card mb-4">
                 <div class="card-body">
@@ -40,9 +41,6 @@
                     <p>Kuruluş Tarihi: {{$universite->kurulus}}</p>
                 </div>
             </div>
-
-
-
 
         </div>
         <div class="col-md-6">
@@ -70,8 +68,10 @@
                                   @endphp
                                 </h5>
                                 <p class="card-text">{{ $comment->yorum }}</p>
+                                <small class="text-muted">Yorum Tarihi: {{ $comment->created_at }}</small>
                             </div>
-                        @if (Auth::user()->id === $comment->user_id)
+                            @if (Auth::check() && Auth::user()->id === $comment->user_id)
+
                             <form action="{{ route('universite_yorum_sil', [$universite->id, $comment->id]) }}"
                                 method="POST">  @csrf  @method('DELETE')
                                 <button class="btn btn-danger btn-sm">Delete</button>
@@ -208,3 +208,4 @@ h2 {
 </script>
 
 @endsection
+

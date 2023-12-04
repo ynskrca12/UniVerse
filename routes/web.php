@@ -29,12 +29,17 @@ Route::get('/universite',[UniversiteController::class, 'index']);
 Route::get('/universite_detay/{id}', [UniversiteController::class, 'universite_detay'])->name('universite_detay');
 
 Route::get('/duyurular',[DuyuruController::class,'index']);
-Route::get('/ilanlar',[IlanController::class,'index']);
+
+Route::get('/ilanlar',[IlanController::class,'index'])->name('ilanlar');
+Route::get('ilan_ekle',[IlanController::class,'ilan_ekle'])->name('ilan_ekle');
+Route::post('ilan_ver',[IlanController::class,'ilan_ver'])->name('ilan_ver');
+
 
 Route::post('/universite/{id}/yorumlar',[StoreCommentController::class,'universite_yorum_ekle'])->name('universite_yorum_ekle');
 Route::delete('/universite/{id}/yorumlar/{comment}',[DeleteCommentController::class,'universite_yorum_sil'])->name('universite_yorum_sil');
 
-
+Route::get('devlet_universite_getir',[UniversiteController::class,'devlet_universite_getir'])->name('devlet_universite_getir');
+Route::get('vakif_universite_getir',[UniversiteController::class,'vakif_universite_getir'])->name('vakif_universite_getir');
 
 
 

@@ -15,6 +15,10 @@
     <div class="row">
       <div class="row mb-4">
         <h3>Üniversitelerimiz</h3>
+        <div class="btn-group" role="group" aria-label="Üniversite Türü">
+            <button type="button" class="btn btn-info filter-button" id="btnDevlet" value="Devlet">Devlet Üniversiteleri</button>
+            <button type="button" class="btn btn-success filter-button" id="btnVakif" value="Vakıf">Vakıf Üniversiteleri</button>
+          </div>
       </div>
       @foreach($universiteler as $universite)
           <div class="col-md-4 mb-4 university-card" data-name="{{$universite->universite_ad}}">
@@ -39,7 +43,7 @@
       @endforeach
   </div>
 </div>
-   
+
 @endsection
 
 @section('css')
@@ -99,7 +103,7 @@ h3 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
-  width: 300px; 
+  width: 300px;
   margin-bottom: 20px;
 }
 
@@ -156,11 +160,16 @@ h3 {
   background-color: #0056b3;
 }
 
-
+.btn-group {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 
 </style>
 
-    
+
 @endsection
 
 @section('js')
@@ -182,6 +191,27 @@ h3 {
     $("#searchButton").on("click", function() {
       $("#searchInput").focus();
     });
+
+    // $("#btnDevlet").on("click", function() {
+    //     var universite_turu = $(this).val();
+    //     console.log(universite_turu)
+    //     $.ajax({
+    //                 type: "GET",
+    //                 url: '{{ route('devlet_universite_getir') }}?universite_turu=' + universite_turu,
+    //                 headers: {
+    //                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //                 },
+    //                 success: function(data) {
+    //                     console.log(data)
+
+
+    //                 },//end success
+    //             });//end ajax
+    // });
+
   });
+
+
+
 </script>
 @endsection

@@ -5,34 +5,39 @@
     <div class="row ">
         <div class="col-xl-3 col-lg-6">
             <div class="card_kategori l-bg-cherry">
-                <div class="card-statistic-3 p-4">                   
-                        <h5 class="card-title mb-0">İş İlanları</h5>                  
+                <div class="card-statistic-3 p-4">
+                        <h5 class="card-title mb-0">İş İlanları</h5>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-lg-6">
             <div class="card_kategori l-bg-green-dark">
-                <div class="card-statistic-3 p-4">                   
-                        <h5 class="card-title mb-0">Ev İlanları</h5>                  
+                <div class="card-statistic-3 p-4">
+                        <h5 class="card-title mb-0">Ev İlanları</h5>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-lg-6">
             <div class="card_kategori l-bg-blue-dark">
-                <div class="card-statistic-3 p-4">                   
-                        <h5 class="card-title mb-0">Eşya İlanları</h5>                  
+                <div class="card-statistic-3 p-4">
+                        <h5 class="card-title mb-0">Eşya İlanları</h5>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-lg-6">
             <div class="card_kategori l-bg-orange-dark">
-                <div class="card-statistic-3 p-4">                   
-                        <h5 class="card-title mb-0">Teknolojik Aletler</h5>                  
+                <div class="card-statistic-3 p-4">
+                        <h5 class="card-title mb-0">Teknolojik Aletler</h5>
                 </div>
             </div>
-        </div>       
+        </div>
     </div>
 </div>
+<!-- Kategori kartları bittikten sonra ekleyebilirsiniz -->
+<div class="col-md-12 text-center mt-3 mb-3">
+    <a href="{{ route('ilan_ekle') }}" class="btn btn-info">İlan Ekle</a>
+</div>
+
     <main>
             <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
                 @foreach ($ilanlar as $ilan)
@@ -43,23 +48,26 @@
                             src="{{ $ilan->image }}"
                             class="card-img-top" alt="...">
                         <div class="card-body">
-                            <div class="clearfix mb-3"> 
-                                <span class="float-start badge rounded-pill bg-primary">{{ $ilan->kategori }}</span> 
+                            <div class="clearfix mb-3">
+                                <span class="float-start badge rounded-pill bg-primary">{{ $ilan->kategori }}</span>
                                 <span class="float-end price-hp">{{ $ilan->fiyat }} <i class="fa fa-turkish-lira" aria-hidden="true"></i></span>
                             </div>
-                            <h5 >{{ $ilan->description }}</h5>                           
+                            <h5 >{{ $ilan->description }}</h5>
                         </div>
                         <div class="card-footer text-center "> <a href="#" class="btn btn-warning">İlan Detay</a>
                         </div>
                     </div>
                 </div>
-                @endforeach           
+                @endforeach
             </div>
     </main>
 @endsection
 
 @section('css')
     <style>
+        /* body{
+    background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+} */
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
@@ -87,7 +95,7 @@
             background: #fff;
             box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .09);
             transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-            border: 2px solid #dddddd; 
+            border: 2px solid #dddddd;
             border-radius: 1rem
         }
 
@@ -302,20 +310,20 @@
         }
 
         .ilanName {
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
     font-weight: bold;
     margin-top: 10px;
     /* margin-bottom: -1rem; */
     text-align: center;
 }
         /* kategori css */
-        
+
         .card_kategori {
     background-color: #fff;
     border-radius: 10px;
     border: none;
     position: relative;
-    margin-bottom: 30px;  
+    margin-bottom: 30px;
      transition: transform 0.5s ease, box-shadow 0.3s ease;
     box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
 }
