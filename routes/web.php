@@ -32,7 +32,7 @@ Route::get('/duyurular',[DuyuruController::class,'index']);
 
 Route::get('/ilanlar',[IlanController::class,'index'])->name('ilanlar');
 Route::get('ilan_ekle',[IlanController::class,'ilan_ekle'])->name('ilan_ekle');
-Route::post('ilan_ver',[IlanController::class,'ilan_ver'])->name('ilan_ver');
+Route::post('ilan_ekle_post',[IlanController::class,'ilan_ekle_post'])->name('ilan_ekle_post');
 
 
 Route::post('/universite/{id}/yorumlar',[StoreCommentController::class,'universite_yorum_ekle'])->name('universite_yorum_ekle');

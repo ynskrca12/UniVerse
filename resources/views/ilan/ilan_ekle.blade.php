@@ -1,23 +1,29 @@
 @extends('layouts.master')
 
 @section('content')
-
+@if(Session::has('error'))
+<p class="alert alert-info">{{ Session::get('error') }}</p>
+@endif
         <div class="container contact-form">
             <div class="contact-image">
                 <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
             </div>
-            <form  action="{{ route('ilan_ver') }}" method="POST">
+            <form  action="{{ route('ilan_ekle_post') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <h3>İlan Ver</h3>
                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label for="floatingInput">İlan Başlığı</label>
                             <input type="text" name="name" class="form-control" placeholder="İlan Başlığı"  />
                         </div>
                         <div class="form-group">
+                            <label for="floatingInput">Fiyat</label>
                             <input type="number" name="fiyat" class="form-control" placeholder="Fiyat"  />
                         </div>
+
                         <div class="form-group">
+                            <label for="floatingInput">İlan Kategorisi</label>
                             <select name="category" class="form-control" id="category">
                                 <option value="İş İlanları">iş İlanı</option>
                                 <option value="Ev İlanları">Ev İlanı</option>
@@ -29,12 +35,13 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label for="floatingInput">İlan Açıklaması</label>
                             <textarea name="description" class="form-control" placeholder="İlan Açıklaması" style="width: 100%; height: 150px;"></textarea>
                         </div>
-                        {{-- <div class="form-group">
+                         <div class="form-group">
                             <label for="image">Fotoğraf Ekle</label>
-                            <input type="file" name="image" class="form-control" accept="image/*" />
-                        </div> --}}
+                            <input type="file" name="file" class="form-control"  />
+                        </div> -
                     </div>
                 </div>
 

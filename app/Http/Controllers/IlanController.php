@@ -21,20 +21,26 @@ class IlanController extends Controller
         return view('ilan.ilan_ekle');
     }
 
-    public function ilan_ver(Request $request){
-        // print_r($request->all());die;
+    public function ilan_ekle_post(Request $request){
+if($request->hasFile('file')){
+                $path = $request->file('file')->store('temp');
+                $file = $request->file('file');
+                $fileName = $file->getClientOriginalName();
+                $file->move(public_path('ilan_image'), $fileName);
+                $ilanData = [
+                    "user_id" => auth()->id(),
+                    "name" => $request->input('name'),
+                    "description" => $request->input("description"),
+                    "fiyat"=> $request->input("fiyat"),
+                    "kategori"=> $request->input("category"),
+                    "image" => $fileName,
+                ];
 
-        $ilanData = [
-            "user_id" => auth()->id(),
-            "name" => $request->input('name'),
-            "description" => $request->input("description"),
-            "fiyat"=> $request->input("fiyat"),
-            "kategori"=> $request->input("kategori"),
-        ];
+                Ilan::insert($ilanData);
 
-        // DB::table('ilan')->insert($ilanData);
-        Ilan::insert($ilanData);
-
-        return redirect()->route("ilanlar")->with("success","İlan Başarıyla Eklendi.");
+                return redirect()->route("ilanlar")->with("success","İlan Başarıyla Eklendi.");
+            }else{
+                return redirect()->route("ilan_ekle")->with("error","İlan Eklenemedi.");
+            }
     }
 }

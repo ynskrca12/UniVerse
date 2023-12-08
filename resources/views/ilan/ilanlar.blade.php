@@ -45,7 +45,7 @@
                     <div class="card h-100 shadow-sm">
                         <label class="ilanName">{{ $ilan->name}}</label>
                         <img
-                            src="{{ $ilan->image }}"
+                            src="{{ asset('ilan_image/' . $ilan->image) }}"
                             class="card-img-top" alt="...">
                         <div class="card-body">
                             <div class="clearfix mb-3">

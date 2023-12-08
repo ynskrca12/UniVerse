@@ -10,4 +10,6 @@ class Ilan extends Model
     use HasFactory;
 
     protected $table = 'ilan';
+
+    // protected $fillable = ['user_id', 'name', 'description', 'fiyat', 'kategori', 'image'];
 }
