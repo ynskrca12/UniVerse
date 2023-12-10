@@ -7,6 +7,7 @@ use App\Http\Controllers\UniversiteController;
 use App\Http\Controllers\DuyuruController;
 use App\Http\Controllers\IlanController;
 use App\Http\Controllers\StoreCommentController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('layouts.master');
@@ -25,6 +26,7 @@ Route::get('/home', function () {
     return view('home');
 });
 
+
 Route::get('/universite',[UniversiteController::class, 'index']);
 Route::get('/universite_detay/{id}', [UniversiteController::class, 'universite_detay'])->name('universite_detay');
 
@@ -42,4 +44,5 @@ Route::get('devlet_universite_getir',[UniversiteController::class,'devlet_univer
 Route::get('vakif_universite_getir',[UniversiteController::class,'vakif_universite_getir'])->name('vakif_universite_getir');
 
 
+Route::get('kullanici_bilgileri',[UserController::class, 'kullanici_bilgileri'])->name('kullanici_bilgileri');
 

@@ -6,8 +6,6 @@
     </a>
 </div>
   <div class="navbar-menu-wrapper d-flex align-items-stretch">
-
-
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item" >
         <a class="nav-link" href="/">
@@ -54,24 +52,12 @@
         </a>
       </li>
     @endauth
-
-
-
       <li class="nav-item d-none d-lg-block full-screen-link">
         <a class="nav-link">
           <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
         </a>
       </li>
-
-
-
-
-
-
     </ul>
-
-
-
   </div>
 </nav>
 
