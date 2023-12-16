@@ -34,10 +34,19 @@
       </li>
       @auth
       {{-- Kullanıcı giriş yapmışsa --}}
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">
-          <span class="menu-title">Çıkış Yap</span>
-        </a>
+      <li class="nav-item dropdown">
+        <div class="dropdown">
+          <a class="nav-link dropbtn" href="#" id="userDropdown">
+            <span class="menu-title"> <i class="fas fa-user"></i> </span>
+          </a>
+          <div class="dropdown-content" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="/kullanici_bilgileri">Kullanıcı Bilgileri</a>
+            <a class="dropdown-item" href="#">Hesap Ayarları</a>
+            <a class="dropdown-item" href="#">Genel Ayarlar</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Çıkış Yap</a>
+          </div>
+        </div>
       </li>
     @else
       {{-- Kullanıcı giriş yapmamışsa --}}
@@ -61,4 +70,47 @@
   </div>
 </nav>
 
+<style>
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+/* Dropdown button style */
+.dropbtn {
+  background-color: #001B48;
+  color: white;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #001B48;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+  background-color: #001B48;
+  color: white;
+
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  </style>

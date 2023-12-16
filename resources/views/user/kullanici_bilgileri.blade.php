@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <section style="background-color: #eee;">
     <div class="container py-5">
       <div class="row">
@@ -24,7 +29,7 @@
               <p class="text-muted mb-1">{{ $user->name }}</p>
               <p class="text-muted mb-4">{{ $user->universite }}</p>
               <div class="d-flex justify-content-center mb-2">
-                <button type="button" class="btn btn-primary">Follow</button>
+                <a href="{{route('kullanici_bilgileri_duzenle', ['id' =>$user->id])}}" class="btn btn-primary">Bilgilerimi Güncelle</a>
                 <button type="button" class="btn btn-outline-primary ms-1">Message</button>
               </div>
             </div>
